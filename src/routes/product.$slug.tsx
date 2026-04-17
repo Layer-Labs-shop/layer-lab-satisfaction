@@ -41,7 +41,7 @@ const reviews = [
 ];
 
 function ProductPage() {
-  const { product } = Route.useLoaderData();
+  const { product } = Route.useLoaderData() as { product: Product };
   const { addItem } = useCart();
   const [color, setColor] = useState(product.colors[0].name);
   const [material, setMaterial] = useState(product.materials[0]);
