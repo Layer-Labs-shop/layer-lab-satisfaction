@@ -36,8 +36,8 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold">Support</h4>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="transition-smooth hover:text-foreground">Shipping</a></li>
-              <li><a href="#" className="transition-smooth hover:text-foreground">Returns</a></li>
+              <li><Link to="/shipping" className="transition-smooth hover:text-foreground">Shipping</Link></li>
+              <li><Link to="/returns" className="transition-smooth hover:text-foreground">Returns</Link></li>
               <li><a href="#" className="transition-smooth hover:text-foreground">FAQ</a></li>
             </ul>
           </div>
