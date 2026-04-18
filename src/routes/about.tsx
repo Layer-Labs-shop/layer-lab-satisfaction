@@ -42,7 +42,7 @@ function AboutPage() {
         <div>
           <h2 className="font-display text-2xl font-bold">Precision is the product</h2>
           <p className="mt-3 text-muted-foreground">
-            Every Layer Lab fidget is printed at 0.1mm layer height with a calibrated tolerance of
+            Every Layer Lab fidget is printed at 0.2mm layer height with a calibrated tolerance of
             ±0.05mm on bearing seats. We chase the dimensional accuracy normally reserved for
             functional engineering parts — because a fidget that doesn't feel right isn't worth
             making.
@@ -74,7 +74,7 @@ function AboutPage() {
 
       <div className="mt-20 rounded-3xl border border-border bg-card p-10 text-center">
         <div className="grid gap-8 md:grid-cols-3">
-          <Stat value="0.1mm" label="layer height" />
+          <Stat value="0.2mm" label="layer height" />
           <Stat value="±0.05mm" label="bearing tolerance" />
           <Stat value="100%" label="hand-tested" />
         </div>
