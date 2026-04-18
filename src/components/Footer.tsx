@@ -30,7 +30,7 @@ export function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li><Link to="/about" className="transition-smooth hover:text-foreground">About</Link></li>
               <li><a href="#" className="transition-smooth hover:text-foreground">Sustainability</a></li>
-              <li><a href="#" className="transition-smooth hover:text-foreground">Contact</a></li>
+              <li><Link to="/contact" className="transition-smooth hover:text-foreground">Contact</Link></li>
             </ul>
           </div>
           <div>
