@@ -1,23 +1,19 @@
-import clicker from "@/assets/product-clicker.jpg";
-import spinner from "@/assets/product-spinner.jpg";
-import slider from "@/assets/product-slider.jpg";
-import cube from "@/assets/product-cube.jpg";
-import rings from "@/assets/product-rings.jpg";
-import chain from "@/assets/product-chain.jpg";
+import mysteryBox from "@/assets/product-mystery-box.jpg";
 
-export type ProductType = "clicker" | "spinner" | "slider" | "cube" | "rings" | "chain";
 export type Material = "PLA+" | "PETG";
 
 export interface Product {
   id: string;
   slug: string;
   name: string;
-  type: ProductType;
+  size: string;
+  fidgetCount: number;
+  freeFidgets: number;
+  bonusChance: number;
   price: number;
   image: string;
   description: string;
   materials: Material[];
-  colors: { name: string; hex: string }[];
   satisfaction: {
     smoothness: number;
     sound: number;
@@ -29,114 +25,67 @@ export interface Product {
 export const products: Product[] = [
   {
     id: "1",
-    slug: "obsidian-clicker",
-    name: "Obsidian Clicker",
-    type: "clicker",
-    price: 24,
-    image: clicker,
+    slug: "mystery-box-5",
+    name: "Mystery Box — 5 Fidgets",
+    size: "Starter",
+    fidgetCount: 5,
+    freeFidgets: 0,
+    bonusChance: 1,
+    price: 7.99,
+    image: mysteryBox,
     description:
-      "A precision-machined click mechanism with 0.1mm tolerance. Each press delivers a crisp, satisfying tactile snap engineered for endless fidgeting.",
+      "Dip your toes in. Five randomly selected precision-printed fidgets, hand-picked from our full collection. 1% chance of an extra free fidget tucked inside.",
     materials: ["PLA+", "PETG"],
-    colors: [
-      { name: "Void Black", hex: "#0a0a0f" },
-      { name: "Neon Blue", hex: "#3b82f6" },
-      { name: "Plasma Purple", hex: "#a855f7" },
-    ],
-    satisfaction: { smoothness: 9, sound: 10, tactile: 10 },
-    badge: "Bestseller",
+    satisfaction: { smoothness: 9, sound: 9, tactile: 9 },
   },
   {
     id: "2",
-    slug: "hex-spinner",
-    name: "Hex Spinner Pro",
-    type: "spinner",
-    price: 32,
-    image: spinner,
+    slug: "mystery-box-10",
+    name: "Mystery Box — 10 Fidgets",
+    size: "Popular",
+    fidgetCount: 10,
+    freeFidgets: 0,
+    bonusChance: 4,
+    price: 14.99,
+    image: mysteryBox,
     description:
-      "Hexagonal precision spinner with ceramic bearings. Spins for 4+ minutes on a single flick. Perfectly weighted for the smoothest experience.",
+      "Ten surprise fidgets, double the variety. 4% chance of an extra free fidget bonus. The sweet spot for collectors building out their desk.",
     materials: ["PLA+", "PETG"],
-    colors: [
-      { name: "Gunmetal", hex: "#2a2a35" },
-      { name: "Plasma Purple", hex: "#a855f7" },
-      { name: "Carbon", hex: "#0a0a0f" },
-    ],
-    satisfaction: { smoothness: 10, sound: 6, tactile: 8 },
-    badge: "New",
+    satisfaction: { smoothness: 9, sound: 9, tactile: 10 },
+    badge: "Bestseller",
   },
   {
     id: "3",
-    slug: "glide-slider",
-    name: "Glide Slider",
-    type: "slider",
-    price: 28,
-    image: slider,
+    slug: "mystery-box-15",
+    name: "Mystery Box — 15 Fidgets",
+    size: "Premium",
+    fidgetCount: 15,
+    freeFidgets: 1,
+    bonusChance: 7,
+    price: 21.99,
+    image: mysteryBox,
     description:
-      "Three magnetically-dampened sliders that float on rails. The smoothest linear motion you'll ever feel from a 3D printed toy.",
-    materials: ["PETG", "PLA+"],
-    colors: [
-      { name: "Void Black", hex: "#0a0a0f" },
-      { name: "Neon Blue", hex: "#3b82f6" },
-    ],
-    satisfaction: { smoothness: 10, sound: 4, tactile: 9 },
+      "Fifteen fidgets plus 1 guaranteed free fidget on the house. 7% chance of an extra free fidget on top. Serious value for serious fidgeters.",
+    materials: ["PLA+", "PETG"],
+    satisfaction: { smoothness: 10, sound: 9, tactile: 10 },
+    badge: "Best Value",
   },
   {
     id: "4",
-    slug: "polyhedron-cube",
-    name: "Polyhedron Cube",
-    type: "cube",
-    price: 38,
-    image: cube,
+    slug: "mystery-box-25",
+    name: "Mystery Box — 25 Fidgets",
+    size: "Mega",
+    fidgetCount: 25,
+    freeFidgets: 2,
+    bonusChance: 10,
+    price: 49.99,
+    image: mysteryBox,
     description:
-      "Six unique fidget surfaces in one geodesic shell. Click, switch, roll, and slide — every face is a different sensation.",
+      "The ultimate haul: 25 hand-picked fidgets, 2 guaranteed free fidgets, and a 10% chance of an extra bonus fidget. Stock the whole office.",
     materials: ["PLA+", "PETG"],
-    colors: [
-      { name: "Plasma Purple", hex: "#a855f7" },
-      { name: "Void Black", hex: "#0a0a0f" },
-    ],
-    satisfaction: { smoothness: 8, sound: 9, tactile: 10 },
-    badge: "Limited",
+    satisfaction: { smoothness: 10, sound: 10, tactile: 10 },
+    badge: "Mega Drop",
   },
-  {
-    id: "5",
-    slug: "magnetic-rings",
-    name: "Magnetic Rings",
-    type: "rings",
-    price: 22,
-    image: rings,
-    description:
-      "Two interlocking rings with neodymium cores. Roll, snap, and orbit them between your fingers — endlessly hypnotic.",
-    materials: ["PLA+", "PETG"],
-    colors: [
-      { name: "Void Black", hex: "#0a0a0f" },
-      { name: "Neon Blue", hex: "#3b82f6" },
-    ],
-    satisfaction: { smoothness: 10, sound: 7, tactile: 9 },
-  },
-  {
-    id: "6",
-    slug: "linked-chain",
-    name: "Articulated Chain",
-    type: "chain",
-    price: 19,
-    image: chain,
-    description:
-      "Print-in-place articulated chain with zero post-assembly. Flows like liquid metal, weighted for the perfect drape.",
-    materials: ["PLA+", "PETG"],
-    colors: [
-      { name: "Plasma Purple", hex: "#a855f7" },
-      { name: "Void Black", hex: "#0a0a0f" },
-    ],
-    satisfaction: { smoothness: 9, sound: 8, tactile: 10 },
-  },
-];
-
-export const productTypes: { value: ProductType; label: string }[] = [
-  { value: "clicker", label: "Clickers" },
-  { value: "spinner", label: "Spinners" },
-  { value: "slider", label: "Sliders" },
-  { value: "cube", label: "Cubes" },
-  { value: "rings", label: "Rings" },
-  { value: "chain", label: "Chains" },
 ];
 
 export const allMaterials: Material[] = ["PLA+", "PETG"];
