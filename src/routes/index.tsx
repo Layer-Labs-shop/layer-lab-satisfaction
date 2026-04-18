@@ -63,7 +63,7 @@ function HomePage() {
             </div>
             <div className="mt-12 flex items-center gap-8 text-xs text-muted-foreground">
               <div>
-                <div className="font-display text-2xl font-bold text-foreground">0.1mm</div>
+                <div className="font-display text-2xl font-bold text-foreground">0.2mm</div>
                 tolerance
               </div>
               <div className="h-8 w-px bg-border" />

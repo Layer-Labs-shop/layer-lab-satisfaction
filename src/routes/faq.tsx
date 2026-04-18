@@ -34,7 +34,7 @@ const sections = [
     items: [
       {
         q: "How precise are your prints?",
-        a: "Every Layer Lab piece is printed at 0.1mm layer height with calibrated tolerances down to 0.1mm. Moving parts are tuned for smooth motion straight off the printer.",
+        a: "Every Layer Lab piece is printed at 0.2mm layer height with calibrated tolerances down to 0.2mm. Moving parts are tuned for smooth motion straight off the printer.",
       },
       {
         q: "Will I see layer lines?",
