@@ -68,7 +68,7 @@ function HomePage() {
               </div>
               <div className="h-8 w-px bg-border" />
               <div>
-                <div className="font-display text-2xl font-bold text-foreground">10k+</div>
+                <div className="font-display text-2xl font-bold text-foreground">100+</div>
                 fidgets shipped
               </div>
               <div className="h-8 w-px bg-border" />
