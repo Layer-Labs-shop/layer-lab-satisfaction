@@ -11,7 +11,6 @@ export function ProductCard({ product }: { product: Product }) {
     addItem({
       product,
       quantity: 1,
-      color: product.colors[0].name,
       material: product.materials[0],
     });
   };
@@ -44,12 +43,25 @@ export function ProductCard({ product }: { product: Product }) {
           <Plus className="h-4 w-4" />
         </button>
       </div>
-      <div className="flex items-center justify-between p-4">
-        <div>
-          <h3 className="font-display text-base font-semibold">{product.name}</h3>
-          <p className="text-xs uppercase tracking-wider text-muted-foreground">{product.type}</p>
+      <div className="flex flex-col gap-2 p-4">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h3 className="font-display text-base font-semibold leading-tight">{product.name}</h3>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground">{product.size}</p>
+          </div>
+          <div className="font-display text-base font-bold text-gradient whitespace-nowrap">
+            €{product.price.toFixed(2)}
+          </div>
         </div>
-        <div className="font-display text-base font-bold text-gradient">${product.price}</div>
+        <ul className="space-y-0.5 text-xs text-muted-foreground">
+          <li>• {product.fidgetCount} random fidgets</li>
+          {product.freeFidgets > 0 && (
+            <li className="text-foreground">
+              • {product.freeFidgets} free fidget{product.freeFidgets > 1 ? "s" : ""} included
+            </li>
+          )}
+          <li>• {product.bonusChance}% chance of bonus fidget</li>
+        </ul>
       </div>
     </Link>
   );

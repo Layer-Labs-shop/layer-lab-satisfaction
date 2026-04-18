@@ -30,7 +30,7 @@ function CartPage() {
     );
   }
 
-  const shipping = total > 50 ? 0 : 6;
+  const shipping = items.length === 0 ? 0 : 3.5;
   const grand = total + shipping;
 
   return (
@@ -52,7 +52,7 @@ function CartPage() {
                   <div>
                     <h3 className="font-display font-semibold">{item.product.name}</h3>
                     <p className="text-xs text-muted-foreground">
-                      {item.color} · {item.material}
+                      {item.product.fidgetCount} fidgets · {item.material}
                     </p>
                   </div>
                   <button
@@ -82,7 +82,7 @@ function CartPage() {
                     </button>
                   </div>
                   <div className="font-display text-base font-bold">
-                    ${(item.product.price * item.quantity).toFixed(2)}
+                    €{(item.product.price * item.quantity).toFixed(2)}
                   </div>
                 </div>
               </div>
@@ -93,13 +93,13 @@ function CartPage() {
         <aside className="h-fit rounded-2xl border border-border bg-card p-6">
           <h2 className="font-display text-lg font-bold">Order summary</h2>
           <div className="mt-4 space-y-2 text-sm">
-            <Row label="Subtotal" value={`$${total.toFixed(2)}`} />
-            <Row label="Shipping" value={shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`} />
+            <Row label="Subtotal" value={`€${total.toFixed(2)}`} />
+            <Row label="Shipping (Europe)" value={`€${shipping.toFixed(2)}`} />
           </div>
           <div className="my-4 border-t border-border" />
           <div className="flex items-center justify-between">
             <span className="text-sm font-semibold">Total</span>
-            <span className="font-display text-xl font-bold text-gradient">${grand.toFixed(2)}</span>
+            <span className="font-display text-xl font-bold text-gradient">€{grand.toFixed(2)}</span>
           </div>
           <Link
             to="/checkout"
@@ -107,11 +107,9 @@ function CartPage() {
           >
             Checkout
           </Link>
-          {shipping > 0 && (
-            <p className="mt-3 text-center text-xs text-muted-foreground">
-              Free shipping on orders over $50
-            </p>
-          )}
+          <p className="mt-3 text-center text-xs text-muted-foreground">
+            Flat €3.50 shipping. We currently ship within Europe only.
+          </p>
         </aside>
       </div>
     </div>

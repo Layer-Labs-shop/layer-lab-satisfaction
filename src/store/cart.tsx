@@ -4,7 +4,6 @@ import type { Product } from "@/data/products";
 export interface CartItem {
   product: Product;
   quantity: number;
-  color: string;
   material: string;
 }
 
@@ -48,10 +47,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const addItem = (item: CartItem) => {
     setItems((prev) => {
       const idx = prev.findIndex(
-        (p) =>
-          p.product.id === item.product.id &&
-          p.color === item.color &&
-          p.material === item.material,
+        (p) => p.product.id === item.product.id && p.material === item.material,
       );
       if (idx >= 0) {
         const next = [...prev];

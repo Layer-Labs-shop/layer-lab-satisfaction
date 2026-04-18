@@ -15,7 +15,7 @@ function CheckoutPage() {
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
 
-  const shipping = total > 50 ? 0 : 6;
+  const shipping = items.length === 0 ? 0 : 3.5;
   const grand = total + shipping;
 
   if (items.length === 0) {
@@ -88,27 +88,27 @@ function CheckoutPage() {
                 <div className="flex flex-1 items-center justify-between">
                   <div>
                     <div className="text-sm font-semibold">{item.product.name}</div>
-                    <div className="text-xs text-muted-foreground">{item.color}</div>
+                    <div className="text-xs text-muted-foreground">{item.material}</div>
                   </div>
-                  <div className="text-sm font-semibold">${(item.product.price * item.quantity).toFixed(2)}</div>
+                  <div className="text-sm font-semibold">€{(item.product.price * item.quantity).toFixed(2)}</div>
                 </div>
               </div>
             ))}
           </div>
           <div className="border-t border-border pt-3 space-y-1 text-sm">
-            <Row label="Subtotal" value={`$${total.toFixed(2)}`} />
-            <Row label="Shipping" value={shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`} />
+            <Row label="Subtotal" value={`€${total.toFixed(2)}`} />
+            <Row label="Shipping (Europe)" value={`€${shipping.toFixed(2)}`} />
           </div>
           <div className="flex items-center justify-between border-t border-border pt-3">
             <span className="text-sm font-semibold">Total</span>
-            <span className="font-display text-xl font-bold text-gradient">${grand.toFixed(2)}</span>
+            <span className="font-display text-xl font-bold text-gradient">€{grand.toFixed(2)}</span>
           </div>
           <button
             type="submit"
             disabled={submitting}
             className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-brand py-3 text-sm font-semibold text-primary-foreground transition-bounce hover:scale-[1.02] glow-brand disabled:opacity-60"
           >
-            {submitting ? "Processing..." : `Pay $${grand.toFixed(2)}`}
+            {submitting ? "Processing..." : `Pay €${grand.toFixed(2)}`}
           </button>
         </aside>
       </form>
