@@ -161,7 +161,7 @@ function HomePage() {
             {
               icon: Layers,
               title: "Premium materials",
-              desc: "PLA+, PETG, Nylon and resin sourced from the best filament makers in the world.",
+              desc: "PLA+ and PETG sourced from the best filament makers in the world.",
             },
             {
               icon: Sparkles,

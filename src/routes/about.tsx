@@ -59,9 +59,8 @@ function AboutPage() {
         <div>
           <h2 className="font-display text-2xl font-bold">Materials that last</h2>
           <p className="mt-3 text-muted-foreground">
-            PLA+ for everyday durability. PETG for impact resistance. Nylon for high-stress
-            mechanisms. Resin for fine geometric detail. We pick the material that makes the
-            fidget feel best — not the cheapest one.
+            PLA+ for everyday durability. PETG for impact resistance. We pick the material
+            that makes the fidget feel best — not the cheapest one.
           </p>
         </div>
         <div>
