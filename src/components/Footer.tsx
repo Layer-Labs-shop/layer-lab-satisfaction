@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -29,7 +29,6 @@ export function Footer() {
             <h4 className="text-sm font-semibold">Company</h4>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li><Link to="/about" className="transition-smooth hover:text-foreground">About</Link></li>
-              <li><a href="#" className="transition-smooth hover:text-foreground">Sustainability</a></li>
               <li><Link to="/contact" className="transition-smooth hover:text-foreground">Contact</Link></li>
             </ul>
           </div>

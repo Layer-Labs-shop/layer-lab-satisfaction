@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Layer Lab</title>
+    <script>
+      // GitHub Pages SPA redirect: rewrite the 404 to / so React Router can handle it.
+      // Preserves the original path in sessionStorage for the app to restore on load.
+      (function () {
+        var pathname = window.location.pathname + window.location.search + window.location.hash;
+        sessionStorage.setItem("spa-redirect", pathname);
+        // Detect repo subpath: if hostname is *.github.io and first segment is the repo,
+        // redirect to that subpath; otherwise root.
+        var segments = window.location.pathname.split("/").filter(Boolean);
+        var base = "/";
+        if (window.location.hostname.endsWith("github.io") && segments.length > 0) {
+          base = "/" + segments[0] + "/";
+        }
+        window.location.replace(base);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
