@@ -7,7 +7,7 @@ import path from "path";
 // Set VITE_BASE to "/REPO_NAME/" when deploying to a project page (e.g. username.github.io/REPO_NAME).
 // Defaults to "/" which is correct for username.github.io and custom domains.
 export default defineConfig({
-  base: process.env.VITE_BASE ?? "/",
+  base: "/layer-lab-satisfaction/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
