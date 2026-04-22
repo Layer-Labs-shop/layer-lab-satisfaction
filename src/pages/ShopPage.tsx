@@ -7,7 +7,7 @@ export default function ShopPage() {
     <div className="mx-auto max-w-7xl px-6 py-16">
       <Seo
         title="Shop — Layer Lab"
-        description="Mystery boxes packed with precision-printed fidget toys. Pick your size, unbox your surprise."
+        description="Mystery boxes packed with precision-printed goods. Pick your size, unbox your surprise."
       />
       <div className="mb-10 text-center">
         <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gradient">Mystery boxes</div>
@@ -15,8 +15,8 @@ export default function ShopPage() {
           Pick your <span className="text-gradient">surprise</span>
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-          Every box is a hand-picked mix of our precision-printed fidgets. Bigger boxes mean
-          more fidgets, more freebies, and better odds at a bonus drop.
+          Every box is a hand-picked mix of our precision-printed pieces — fidgets, desk toys and
+          surprise prints. Bigger boxes mean more items, more freebies, and better odds at a bonus drop.
         </p>
       </div>
 
