@@ -42,7 +42,7 @@ export default function ProductPage() {
   const handleAdd = () => {
     if (!canAdd) return;
     // Build the variant string used to differentiate cart entries.
-    let variant = material;
+    let variant: string = material;
     if (isPrint && color) variant = color;
     if (product.customizable && customName.trim()) {
       variant = `${color || material} · "${customName.trim()}"`;
