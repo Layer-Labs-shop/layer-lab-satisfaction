@@ -26,7 +26,7 @@ export const products: Product[] = [
   {
     id: "1",
     slug: "mystery-box-5",
-    name: "Mystery Box — 5 Fidgets",
+    name: "Mystery Box — 5 Prints",
     size: "Starter",
     fidgetCount: 5,
     freeFidgets: 0,
@@ -34,14 +34,14 @@ export const products: Product[] = [
     price: 7.99,
     image: mysteryBox,
     description:
-      "Dip your toes in. Five randomly selected precision-printed fidgets, hand-picked from our full collection. 1% chance of an extra free fidget tucked inside.",
+      "Dip your toes in. Five randomly selected precision prints — fidgets, desk pieces and surprise items hand-picked from our full collection. 1% chance of an extra free print tucked inside.",
     materials: ["PLA+", "PETG"],
     satisfaction: { smoothness: 9, sound: 9, tactile: 9 },
   },
   {
     id: "2",
     slug: "mystery-box-10",
-    name: "Mystery Box — 10 Fidgets",
+    name: "Mystery Box — 10 Prints",
     size: "Popular",
     fidgetCount: 10,
     freeFidgets: 0,
@@ -49,7 +49,7 @@ export const products: Product[] = [
     price: 14.99,
     image: mysteryBox,
     description:
-      "Ten surprise fidgets, double the variety. 4% chance of an extra free fidget bonus. The sweet spot for collectors building out their desk.",
+      "Ten surprise prints, double the variety. 4% chance of an extra free bonus print. The sweet spot for collectors building out their desk.",
     materials: ["PLA+", "PETG"],
     satisfaction: { smoothness: 9, sound: 9, tactile: 10 },
     badge: "Bestseller",
@@ -57,7 +57,7 @@ export const products: Product[] = [
   {
     id: "3",
     slug: "mystery-box-15",
-    name: "Mystery Box — 15 Fidgets",
+    name: "Mystery Box — 15 Prints",
     size: "Premium",
     fidgetCount: 15,
     freeFidgets: 1,
@@ -65,7 +65,7 @@ export const products: Product[] = [
     price: 21.99,
     image: mysteryBox,
     description:
-      "Fifteen fidgets plus 1 guaranteed free fidget on the house. 7% chance of an extra free fidget on top. Serious value for serious fidgeters.",
+      "Fifteen prints plus 1 guaranteed freebie on the house. 7% chance of an extra bonus print on top. Serious value for serious collectors.",
     materials: ["PLA+", "PETG"],
     satisfaction: { smoothness: 10, sound: 9, tactile: 10 },
     badge: "Best Value",
@@ -73,7 +73,7 @@ export const products: Product[] = [
   {
     id: "4",
     slug: "mystery-box-25",
-    name: "Mystery Box — 25 Fidgets",
+    name: "Mystery Box — 25 Prints",
     size: "Mega",
     fidgetCount: 25,
     freeFidgets: 2,
@@ -81,7 +81,7 @@ export const products: Product[] = [
     price: 49.99,
     image: mysteryBox,
     description:
-      "The ultimate haul: 25 hand-picked fidgets, 2 guaranteed free fidgets, and a 10% chance of an extra bonus fidget. Stock the whole office.",
+      "The ultimate haul: 25 hand-picked prints, 2 guaranteed freebies, and a 10% chance of an extra bonus print. Stock the whole office.",
     materials: ["PLA+", "PETG"],
     satisfaction: { smoothness: 10, sound: 10, tactile: 10 },
     badge: "Mega Drop",

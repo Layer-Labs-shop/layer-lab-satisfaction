@@ -53,13 +53,13 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
         </div>
         <ul className="space-y-0.5 text-xs text-muted-foreground">
-          <li>• {product.fidgetCount} random fidgets</li>
+          <li>• {product.fidgetCount} random prints</li>
           {product.freeFidgets > 0 && (
             <li className="text-foreground">
-              • {product.freeFidgets} free fidget{product.freeFidgets > 1 ? "s" : ""} included
+              • {product.freeFidgets} free print{product.freeFidgets > 1 ? "s" : ""} included
             </li>
           )}
-          <li>• {product.bonusChance}% chance of bonus fidget</li>
+          <li>• {product.bonusChance}% chance of bonus print</li>
         </ul>
       </div>
     </Link>

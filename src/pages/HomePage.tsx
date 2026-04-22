@@ -12,8 +12,8 @@ export default function HomePage() {
   return (
     <>
       <Seo
-        title="Layer Lab — Precision Printed Fidget Toys"
-        description="Premium 3D printed fidget toys engineered for satisfaction. Shop clickers, spinners, sliders and more."
+        title="Layer Lab — Precision 3D Printed Goods"
+        description="Premium 3D printed fidgets, desk pieces and custom prints engineered for satisfaction."
       />
       <section className="relative overflow-hidden">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:py-32">
@@ -28,7 +28,7 @@ export default function HomePage() {
               <span className="text-gradient">Perfectly Satisfying.</span>
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-              High-end 3D printed fidget toys with sub-millimeter tolerances. Smooth mechanics, premium materials, futuristic design.
+              High-end 3D printed goods with sub-millimeter tolerances — fidgets, desk pieces and custom prints. Smooth mechanics, premium materials, futuristic design.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -53,7 +53,7 @@ export default function HomePage() {
               <div className="h-8 w-px bg-border" />
               <div>
                 <div className="font-display text-2xl font-bold text-foreground">100+</div>
-                fidgets shipped
+                prints shipped
               </div>
               <div className="h-8 w-px bg-border" />
               <div>
@@ -67,7 +67,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-brand-soft blur-3xl" />
             <img
               src={heroImg}
-              alt="Layer Lab fidget spinner with neon rim lighting"
+              alt="Layer Lab precision 3D printed piece with neon rim lighting"
               width={1600}
               height={1024}
               className="relative animate-float drop-shadow-2xl"
@@ -80,7 +80,7 @@ export default function HomePage() {
         <div className="mb-10 flex items-end justify-between">
           <div>
             <h2 className="font-display text-3xl font-bold md:text-4xl">Featured drops</h2>
-            <p className="mt-2 text-muted-foreground">Our most-loved fidgets, ready to ship.</p>
+            <p className="mt-2 text-muted-foreground">Our most-loved prints, ready to ship.</p>
           </div>
           <Link
             to="/shop"
@@ -114,7 +114,7 @@ export default function HomePage() {
               Every layer tuned for the perfect feel.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              We obsess over the details that nobody else does — extrusion temperature, layer adhesion, bearing seat tolerance. The result is a fidget that feels like a precision instrument, not a toy.
+              We obsess over the details that nobody else does — extrusion temperature, layer adhesion, bearing seat tolerance. The result is a print that feels like a precision instrument, not a knick-knack.
             </p>
             <p className="mt-4 text-muted-foreground">
               Designed in our lab, printed on calibrated industrial machines, hand-finished and quality-checked by humans before they ship to you.
@@ -131,7 +131,7 @@ export default function HomePage() {
           {[
             { icon: Gauge, title: "Sub-mm precision", desc: "0.2mm tolerances on every moving part. Bearings seat perfectly. Clicks land crisp." },
             { icon: Layers, title: "Premium materials", desc: "PLA+ and PETG sourced from the best filament makers in the world." },
-            { icon: Sparkles, title: "Designed to feel", desc: "Each design is iterated dozens of times until the fidget action is genuinely satisfying." },
+            { icon: Sparkles, title: "Designed to feel", desc: "Each design is iterated dozens of times until every print is genuinely satisfying." },
           ].map((f) => (
             <div key={f.title} className="group rounded-2xl border border-border bg-card p-8 transition-smooth hover:border-primary/40 hover-lift">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-brand-soft transition-bounce group-hover:scale-110">
@@ -149,10 +149,10 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-brand-soft" />
           <div className="relative">
             <h2 className="font-display text-3xl font-bold md:text-5xl">
-              Find your <span className="text-gradient">perfect fidget</span>.
+              Find your <span className="text-gradient">perfect print</span>.
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
-              Browse the full collection — every product engineered for endless satisfaction.
+              Browse the full collection — every piece engineered for endless satisfaction.
             </p>
             <Link
               to="/shop"

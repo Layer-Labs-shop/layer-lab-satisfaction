@@ -17,7 +17,7 @@ const sections = [
     title: "Materials",
     items: [
       { q: "What filaments do you use?", a: "We exclusively print in PLA+ and PETG. PLA+ gives a crisp tactile feel and rich color saturation. PETG is tougher and slightly flexible — better for parts that take repeated stress." },
-      { q: "Why only PLA+ and PETG?", a: "We tested dozens of materials and these two consistently deliver the best balance of finish quality, durability, and sustainability for fidget-grade products." },
+      { q: "Why only PLA+ and PETG?", a: "We tested dozens of materials and these two consistently deliver the best balance of finish quality, durability, and sustainability for everyday prints." },
       { q: "Are your materials safe?", a: "Yes. Both PLA+ and PETG are non-toxic. PLA+ is plant-based and biodegradable under industrial composting conditions." },
     ],
   },
@@ -25,7 +25,7 @@ const sections = [
     icon: Package,
     title: "Care & durability",
     items: [
-      { q: "How do I clean my fidget?", a: "Wipe with a soft, slightly damp cloth. Avoid alcohol, acetone, or harsh solvents — they can dull the finish. Never put your fidget in the dishwasher." },
+      { q: "How do I clean my prints?", a: "Wipe with a soft, slightly damp cloth. Avoid alcohol, acetone, or harsh solvents — they can dull the finish. Never put your prints in the dishwasher." },
       { q: "Can I leave it in a hot car?", a: "Please don't. PLA+ softens above 60°C / 140°F. PETG is more heat-tolerant but still not built for direct sun behind glass. Store at room temperature." },
       { q: "What if a moving part feels stiff?", a: "Most pieces loosen up after a few minutes of use. For bearings, a single drop of light machine oil restores buttery motion." },
     ],
@@ -47,7 +47,7 @@ export default function FaqPage() {
     <div className="mx-auto max-w-4xl px-6 py-16">
       <Seo
         title="FAQ — Layer Lab"
-        description="Answers about print quality, materials, care, and orders for Layer Lab 3D printed fidget toys."
+        description="Answers about print quality, materials, care, and orders for Layer Lab 3D printed goods."
       />
       <header className="text-center">
         <h1 className="font-display text-4xl font-bold md:text-5xl">

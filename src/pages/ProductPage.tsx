@@ -7,9 +7,9 @@ import { SatisfactionMeter } from "@/components/SatisfactionMeter";
 import { Seo } from "@/components/Seo";
 
 const reviews = [
-  { name: "Marcus T.", rating: 5, text: "Got the 10-pack and every single fidget was crisp. Two of my favourites came in this box." },
+  { name: "Marcus T.", rating: 5, text: "Got the 10-pack and every single print was crisp. Two of my favourites came in this box." },
   { name: "Aisha R.", rating: 5, text: "The mystery factor is half the fun. Build quality across all of them is unreal." },
-  { name: "Devon K.", rating: 4, text: "Bought the 25 box for the office. Everyone fought over the spinners. Worth it." },
+  { name: "Devon K.", rating: 4, text: "Bought the 25 box for the office. Everyone fought over the spinners and desk pieces. Worth it." },
 ];
 
 export default function ProductPage() {
@@ -75,8 +75,8 @@ export default function ProductPage() {
           <p className="mt-6 text-muted-foreground">{product.description}</p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            <Stat icon={Package} label="Fidgets" value={`${product.fidgetCount}`} />
-            <Stat icon={Gift} label="Free fidgets" value={product.freeFidgets > 0 ? `+${product.freeFidgets}` : "—"} />
+            <Stat icon={Package} label="Prints" value={`${product.fidgetCount}`} />
+            <Stat icon={Gift} label="Free prints" value={product.freeFidgets > 0 ? `+${product.freeFidgets}` : "—"} />
             <Stat icon={Sparkles} label="Bonus chance" value={`${product.bonusChance}%`} />
           </div>
 
@@ -114,7 +114,7 @@ export default function ProductPage() {
 
           <div className="mt-10 rounded-2xl border border-border bg-card p-6">
             <h3 className="font-display text-sm font-semibold">Satisfaction factor</h3>
-            <p className="text-xs text-muted-foreground">How fidgets in this box actually feel.</p>
+            <p className="text-xs text-muted-foreground">How the prints in this box actually feel.</p>
             <div className="mt-5 space-y-4">
               <SatisfactionMeter label="Click smoothness" value={product.satisfaction.smoothness} />
               <SatisfactionMeter label="Sound rating" value={product.satisfaction.sound} />

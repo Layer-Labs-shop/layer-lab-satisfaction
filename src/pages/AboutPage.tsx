@@ -6,7 +6,7 @@ export default function AboutPage() {
     <div className="mx-auto max-w-4xl px-6 py-20">
       <Seo
         title="About — Layer Lab"
-        description="The story behind Layer Lab — precision printing, obsessive design, hand-finished fidgets."
+        description="The story behind Layer Lab — precision printing, obsessive design, hand-finished 3D prints."
       />
       <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gradient">Our story</div>
       <h1 className="mt-3 font-display text-4xl font-bold md:text-6xl">
@@ -16,7 +16,7 @@ export default function AboutPage() {
       <p className="mt-6 text-lg text-muted-foreground">
         Layer Lab started in a garage with one printer and a bad fidget cube. We knew we could
         do better — tighter tolerances, smoother mechanics, a real sense of craft. Three years
-        later, our fidgets ship to thousands of desks worldwide.
+        later, our prints — from fidgets to desk pieces and custom commissions — ship to thousands of homes worldwide.
       </p>
 
       <div className="mt-12 overflow-hidden rounded-3xl border border-border">
@@ -27,9 +27,9 @@ export default function AboutPage() {
         <div>
           <h2 className="font-display text-2xl font-bold">Precision is the product</h2>
           <p className="mt-3 text-muted-foreground">
-            Every Layer Lab fidget is printed at 0.2mm layer height with a calibrated tolerance of
+            Every Layer Lab print is produced at 0.2mm layer height with a calibrated tolerance of
             ±0.05mm on bearing seats. We chase the dimensional accuracy normally reserved for
-            functional engineering parts — because a fidget that doesn't feel right isn't worth making.
+            functional engineering parts — because a print that doesn't feel right isn't worth making.
           </p>
         </div>
         <div>
@@ -44,7 +44,7 @@ export default function AboutPage() {
           <h2 className="font-display text-2xl font-bold">Materials that last</h2>
           <p className="mt-3 text-muted-foreground">
             PLA+ for everyday durability. PETG for impact resistance. We pick the material
-            that makes the fidget feel best — not the cheapest one.
+            that makes the piece feel best — not the cheapest one.
           </p>
         </div>
         <div>
