@@ -25,7 +25,7 @@ const sections = [
     icon: Package,
     title: "Care & durability",
     items: [
-      { q: "How do I clean my fidget?", a: "Wipe with a soft, slightly damp cloth. Avoid alcohol, acetone, or harsh solvents — they can dull the finish. Never put your fidget in the dishwasher." },
+      { q: "How do I clean my prints?", a: "Wipe with a soft, slightly damp cloth. Avoid alcohol, acetone, or harsh solvents — they can dull the finish. Never put your prints in the dishwasher." },
       { q: "Can I leave it in a hot car?", a: "Please don't. PLA+ softens above 60°C / 140°F. PETG is more heat-tolerant but still not built for direct sun behind glass. Store at room temperature." },
       { q: "What if a moving part feels stiff?", a: "Most pieces loosen up after a few minutes of use. For bearings, a single drop of light machine oil restores buttery motion." },
     ],
