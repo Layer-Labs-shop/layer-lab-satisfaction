@@ -53,7 +53,7 @@ export default function HomePage() {
               <div className="h-8 w-px bg-border" />
               <div>
                 <div className="font-display text-2xl font-bold text-foreground">100+</div>
-                fidgets shipped
+                prints shipped
               </div>
               <div className="h-8 w-px bg-border" />
               <div>
