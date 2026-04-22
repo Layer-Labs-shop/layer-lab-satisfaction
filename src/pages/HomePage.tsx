@@ -114,7 +114,7 @@ export default function HomePage() {
               Every layer tuned for the perfect feel.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              We obsess over the details that nobody else does — extrusion temperature, layer adhesion, bearing seat tolerance. The result is a fidget that feels like a precision instrument, not a toy.
+              We obsess over the details that nobody else does — extrusion temperature, layer adhesion, bearing seat tolerance. The result is a print that feels like a precision instrument, not a knick-knack.
             </p>
             <p className="mt-4 text-muted-foreground">
               Designed in our lab, printed on calibrated industrial machines, hand-finished and quality-checked by humans before they ship to you.
