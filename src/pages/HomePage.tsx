@@ -80,7 +80,7 @@ export default function HomePage() {
         <div className="mb-10 flex items-end justify-between">
           <div>
             <h2 className="font-display text-3xl font-bold md:text-4xl">Featured drops</h2>
-            <p className="mt-2 text-muted-foreground">Our most-loved fidgets, ready to ship.</p>
+            <p className="mt-2 text-muted-foreground">Our most-loved prints, ready to ship.</p>
           </div>
           <Link
             to="/shop"
