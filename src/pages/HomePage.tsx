@@ -12,8 +12,8 @@ export default function HomePage() {
   return (
     <>
       <Seo
-        title="Layer Lab — Precision Printed Fidget Toys"
-        description="Premium 3D printed fidget toys engineered for satisfaction. Shop clickers, spinners, sliders and more."
+        title="Layer Lab — Precision 3D Printed Goods"
+        description="Premium 3D printed fidgets, desk pieces and custom prints engineered for satisfaction."
       />
       <section className="relative overflow-hidden">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:py-32">
