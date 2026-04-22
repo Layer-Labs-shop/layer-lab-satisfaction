@@ -47,7 +47,7 @@ export default function FaqPage() {
     <div className="mx-auto max-w-4xl px-6 py-16">
       <Seo
         title="FAQ — Layer Lab"
-        description="Answers about print quality, materials, care, and orders for Layer Lab 3D printed fidget toys."
+        description="Answers about print quality, materials, care, and orders for Layer Lab 3D printed goods."
       />
       <header className="text-center">
         <h1 className="font-display text-4xl font-bold md:text-5xl">
