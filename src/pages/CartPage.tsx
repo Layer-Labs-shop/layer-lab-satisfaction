@@ -45,7 +45,7 @@ export default function CartPage() {
                   <div>
                     <h3 className="font-display font-semibold">{item.product.name}</h3>
                     <p className="text-xs text-muted-foreground">
-                      {item.product.fidgetCount} fidgets · {item.material}
+                      {item.product.fidgetCount} prints · {item.material}
                     </p>
                   </div>
                   <button
