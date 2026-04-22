@@ -6,7 +6,7 @@ export default function ReturnsPage() {
     <div className="mx-auto max-w-4xl px-6 py-20">
       <Seo
         title="Returns & Warranty — Layer Lab"
-        description="Every Layer Lab fidget is backed by a 15-day warranty. If something's off, we'll make it right."
+        description="Every Layer Lab print is backed by a 15-day warranty. If something's off, we'll make it right."
       />
       <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-3 py-1 text-xs text-muted-foreground">
         <ShieldCheck className="h-3.5 w-3.5" />
@@ -16,7 +16,7 @@ export default function ReturnsPage() {
         Backed by a <span className="text-gradient">15-day warranty</span>.
       </h1>
       <p className="mt-4 max-w-2xl text-muted-foreground">
-        We obsess over every layer so you don't have to. If your fidget arrives damaged, defective,
+        We obsess over every layer so you don't have to. If your order arrives damaged, defective,
         or just isn't satisfying enough — we've got you.
       </p>
 
