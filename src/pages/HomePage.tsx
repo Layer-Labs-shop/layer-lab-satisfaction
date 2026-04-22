@@ -149,10 +149,10 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-brand-soft" />
           <div className="relative">
             <h2 className="font-display text-3xl font-bold md:text-5xl">
-              Find your <span className="text-gradient">perfect fidget</span>.
+              Find your <span className="text-gradient">perfect print</span>.
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
-              Browse the full collection — every product engineered for endless satisfaction.
+              Browse the full collection — every piece engineered for endless satisfaction.
             </p>
             <Link
               to="/shop"
