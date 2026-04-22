@@ -16,14 +16,20 @@ export default function ProductPage() {
   const { slug } = useParams<{ slug: string }>();
   const product = products.find((p) => p.slug === slug);
   const { addItem } = useCart();
+
+  const isPrint = product?.kind === "print";
+  const initialColor = product?.colors?.[0]?.name ?? "";
+
   const [material, setMaterial] = useState(product?.materials[0] ?? "PLA+");
+  const [color, setColor] = useState<string>(initialColor);
+  const [customName, setCustomName] = useState("");
   const [added, setAdded] = useState(false);
 
   if (!product) {
     return (
       <div className="mx-auto max-w-md px-6 py-32 text-center">
-        <Seo title="Box not found — Layer Lab" />
-        <h1 className="font-display text-3xl font-bold">Box not found</h1>
+        <Seo title="Product not found — Layer Lab" />
+        <h1 className="font-display text-3xl font-bold">Product not found</h1>
         <Link to="/shop" className="mt-6 inline-block text-gradient hover:underline">
           Back to shop
         </Link>
@@ -31,8 +37,17 @@ export default function ProductPage() {
     );
   }
 
+  const canAdd = !product.customizable || customName.trim().length > 0;
+
   const handleAdd = () => {
-    addItem({ product, quantity: 1, material });
+    if (!canAdd) return;
+    // Build the variant string used to differentiate cart entries.
+    let variant = material;
+    if (isPrint && color) variant = color;
+    if (product.customizable && customName.trim()) {
+      variant = `${color || material} · "${customName.trim()}"`;
+    }
+    addItem({ product, quantity: 1, material: variant });
     setAdded(true);
     setTimeout(() => setAdded(false), 1800);
   };
@@ -64,7 +79,9 @@ export default function ProductPage() {
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-[0.2em] text-gradient">{product.size} mystery box</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-gradient">
+            {isPrint ? "Precision print" : `${product.size} mystery box`}
+          </div>
           <h1 className="mt-2 font-display text-4xl font-bold md:text-5xl">{product.name}</h1>
           <div className="mt-4 flex items-center gap-3">
             <div className="font-display text-3xl font-bold">€{product.price.toFixed(2)}</div>
@@ -74,11 +91,54 @@ export default function ProductPage() {
           </div>
           <p className="mt-6 text-muted-foreground">{product.description}</p>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            <Stat icon={Package} label="Prints" value={`${product.fidgetCount}`} />
-            <Stat icon={Gift} label="Free prints" value={product.freeFidgets > 0 ? `+${product.freeFidgets}` : "—"} />
-            <Stat icon={Sparkles} label="Bonus chance" value={`${product.bonusChance}%`} />
-          </div>
+          {!isPrint && (
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <Stat icon={Package} label="Prints" value={`${product.fidgetCount}`} />
+              <Stat icon={Gift} label="Free prints" value={product.freeFidgets > 0 ? `+${product.freeFidgets}` : "—"} />
+              <Stat icon={Sparkles} label="Bonus chance" value={`${product.bonusChance}%`} />
+            </div>
+          )}
+
+          {isPrint && product.colors && product.colors.length > 0 && (
+            <div className="mt-8">
+              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+                Color — <span className="text-foreground">{color}</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {product.colors.map((c) => (
+                  <button
+                    key={c.name}
+                    onClick={() => setColor(c.name)}
+                    aria-label={c.name}
+                    title={c.name}
+                    className={`h-9 w-9 rounded-full border-2 transition-smooth ${
+                      color === c.name ? "border-primary glow-brand scale-110" : "border-border hover:border-primary/40"
+                    }`}
+                    style={{ backgroundColor: c.hex }}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {product.customizable && (
+            <div className="mt-6">
+              <label className="mb-2 block text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+                Your name / word
+              </label>
+              <input
+                type="text"
+                value={customName}
+                onChange={(e) => setCustomName(e.target.value.slice(0, 14))}
+                placeholder="e.g. ALEX"
+                maxLength={14}
+                className="w-full rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold uppercase tracking-wider transition-smooth focus:border-primary focus:outline-none"
+              />
+              <p className="mt-2 text-[11px] text-muted-foreground">
+                Up to 14 characters. Letters, numbers and spaces work best.
+              </p>
+            </div>
+          )}
 
           <div className="mt-6">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">
@@ -103,10 +163,13 @@ export default function ProductPage() {
 
           <button
             onClick={handleAdd}
-            className="mt-8 group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-brand py-4 text-sm font-semibold text-primary-foreground transition-bounce hover:scale-[1.02] glow-brand"
+            disabled={!canAdd}
+            className="mt-8 group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-brand py-4 text-sm font-semibold text-primary-foreground transition-bounce hover:scale-[1.02] glow-brand disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
           >
             {added ? (
               <><Check className="h-4 w-4" /> Added to cart</>
+            ) : !canAdd ? (
+              <>Enter a name to continue</>
             ) : (
               <><ShoppingBag className="h-4 w-4 transition-bounce group-hover:rotate-12" /> Add to cart</>
             )}
@@ -114,7 +177,7 @@ export default function ProductPage() {
 
           <div className="mt-10 rounded-2xl border border-border bg-card p-6">
             <h3 className="font-display text-sm font-semibold">Satisfaction factor</h3>
-            <p className="text-xs text-muted-foreground">How the prints in this box actually feel.</p>
+            <p className="text-xs text-muted-foreground">How this print actually feels.</p>
             <div className="mt-5 space-y-4">
               <SatisfactionMeter label="Click smoothness" value={product.satisfaction.smoothness} />
               <SatisfactionMeter label="Sound rating" value={product.satisfaction.sound} />
