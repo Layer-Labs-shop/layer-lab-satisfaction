@@ -1,16 +1,24 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Lock } from "lucide-react";
+import { toast } from "sonner";
 import { useCart } from "@/store/cart";
+import { useAuth } from "@/hooks/useAuth";
+import { supabase } from "@/integrations/supabase/client";
 import { Seo } from "@/components/Seo";
 
 export default function CheckoutPage() {
   const { items, total, clear } = useCart();
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
 
   const shipping = items.length === 0 ? 0 : 3.5;
   const grand = total + shipping;
+
+  useEffect(() => {
+    if (!user) navigate("/auth", { replace: true });
+  }, [user, navigate]);
 
   if (items.length === 0) {
     return (
@@ -22,13 +30,44 @@ export default function CheckoutPage() {
     );
   }
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!user) {
+      navigate("/auth");
+      return;
+    }
     setSubmitting(true);
-    setTimeout(() => {
-      clear();
-      navigate("/order-confirmation");
-    }, 900);
+    const fd = new FormData(e.currentTarget as HTMLFormElement);
+    const payload = {
+      user_id: user.id,
+      email: String(fd.get("email") ?? user.email ?? ""),
+      full_name: `${fd.get("firstName") ?? ""} ${fd.get("lastName") ?? ""}`.trim(),
+      address: String(fd.get("address") ?? ""),
+      city: String(fd.get("city") ?? ""),
+      postal_code: String(fd.get("zip") ?? ""),
+      country: String(fd.get("state") ?? ""),
+      items: items.map((it) => ({
+        product_id: it.product.id,
+        name: it.product.name,
+        image: it.product.image,
+        material: it.material,
+        price: it.product.price,
+        quantity: it.quantity,
+      })),
+      subtotal: Number(total.toFixed(2)),
+      shipping: Number(shipping.toFixed(2)),
+      total: Number(grand.toFixed(2)),
+      status: "processing",
+    };
+
+    const { error } = await supabase.from("orders").insert(payload);
+    if (error) {
+      toast.error("Could not place order: " + error.message);
+      setSubmitting(false);
+      return;
+    }
+    clear();
+    navigate("/order-confirmation");
   };
 
   return (
@@ -39,7 +78,7 @@ export default function CheckoutPage() {
       <form onSubmit={onSubmit} className="mt-10 grid gap-10 lg:grid-cols-[1fr_380px]">
         <div className="space-y-10">
           <Section title="Contact">
-            <Field label="Email" type="email" name="email" required />
+            <Field label="Email" type="email" name="email" defaultValue={user?.email ?? ""} required />
           </Section>
 
           <Section title="Shipping address">

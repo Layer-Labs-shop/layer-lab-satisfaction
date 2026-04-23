@@ -16,6 +16,7 @@ import FaqPage from "@/pages/FaqPage";
 import ShippingPage from "@/pages/ShippingPage";
 import ReturnsPage from "@/pages/ReturnsPage";
 import AuthPage from "@/pages/AuthPage";
+import AccountPage from "@/pages/AccountPage";
 
 function NotFound() {
   return (
@@ -59,6 +60,7 @@ export default function App() {
               <Route path="/shipping" element={<ShippingPage />} />
               <Route path="/returns" element={<ReturnsPage />} />
               <Route path="/auth" element={<AuthPage />} />
+              <Route path="/account" element={<AccountPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
