@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Check, ShoppingBag, Star, Gift, Sparkles, Package } from "lucide-react";
 import { products } from "@/data/products";
 import { useCart } from "@/store/cart";
-import { SatisfactionMeter } from "@/components/SatisfactionMeter";
 import { Seo } from "@/components/Seo";
 
 const reviews = [
@@ -174,16 +173,6 @@ export default function ProductPage() {
               <><ShoppingBag className="h-4 w-4 transition-bounce group-hover:rotate-12" /> Add to cart</>
             )}
           </button>
-
-          <div className="mt-10 rounded-2xl border border-border bg-card p-6">
-            <h3 className="font-display text-sm font-semibold">Satisfaction factor</h3>
-            <p className="text-xs text-muted-foreground">How this print actually feels.</p>
-            <div className="mt-5 space-y-4">
-              <SatisfactionMeter label="Click smoothness" value={product.satisfaction.smoothness} />
-              <SatisfactionMeter label="Sound rating" value={product.satisfaction.sound} />
-              <SatisfactionMeter label="Tactile feedback" value={product.satisfaction.tactile} />
-            </div>
-          </div>
         </div>
       </div>
 
