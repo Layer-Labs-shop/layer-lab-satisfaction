@@ -173,6 +173,8 @@ export default function ProductPage() {
               <><ShoppingBag className="h-4 w-4 transition-bounce group-hover:rotate-12" /> Add to cart</>
             )}
           </button>
+        </div>
+      </div>
 
       <section className="mt-20">
         <h2 className="font-display text-2xl font-bold md:text-3xl">What people say</h2>
