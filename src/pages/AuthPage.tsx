@@ -1,10 +1,13 @@
+import { auth, googleProvider } from "@/lib/firebase";
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable/index";
 import { Seo } from "@/components/Seo";
-import { useAuth } from "@/hooks/useAuth";
 import { useEffect } from "react";
 
 export default function AuthPage() {
