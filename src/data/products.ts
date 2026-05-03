@@ -231,11 +231,11 @@ export const products: Product[] = [
     kind: "mystery",
     fidgetCount: 15,
     freeFidgets: 1,
-    bonusChance: 7,
+    bonusChance: 20,
     price: 21.99,
     image: mysteryBox,
     description:
-      "Fifteen prints plus 1 guaranteed freebie on the house. 7% chance of an extra bonus print on top. Serious value for serious collectors.",
+      "Fifteen prints plus 1 guaranteed freebie on the house. 20% chance of a rare fidget on top. Serious value for serious collectors.",
     materials: ["PLA+", "PETG"],
     satisfaction: { smoothness: 10, sound: 9, tactile: 10 },
     badge: "Best Value",
