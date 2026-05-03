@@ -199,7 +199,7 @@ export const products: Product[] = [
     fidgetCount: 5,
     freeFidgets: 0,
     bonusChance: 5,
-    price: 7.99,
+    price: 15.99,
     image: mysteryBox,
     description:
       "Dip your toes in. Five randomly selected precision prints — fidgets, desk pieces and surprise items hand-picked from our full collection. 5% chance of a rare fidget tucked inside.",
@@ -215,7 +215,7 @@ export const products: Product[] = [
     fidgetCount: 10,
     freeFidgets: 0,
     bonusChance: 10,
-    price: 14.99,
+    price: 29.99,
     image: mysteryBox,
     description:
       "Ten surprise prints, double the variety. 10% chance of a rare fidget. The sweet spot for collectors building out their desk.",
@@ -232,7 +232,7 @@ export const products: Product[] = [
     fidgetCount: 15,
     freeFidgets: 1,
     bonusChance: 20,
-    price: 21.99,
+    price: 43.99,
     image: mysteryBox,
     description:
       "Fifteen prints plus 1 guaranteed freebie on the house. 20% chance of a rare fidget on top. Serious value for serious collectors.",
@@ -249,7 +249,7 @@ export const products: Product[] = [
     fidgetCount: 25,
     freeFidgets: 2,
     bonusChance: 30,
-    price: 49.99,
+    price: 55.99,
     image: mysteryBox,
     description:
       "The ultimate haul: 25 hand-picked prints, 2 guaranteed freebies, and a 30% chance of a rare fidget. Stock the whole office.",
