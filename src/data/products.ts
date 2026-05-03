@@ -193,7 +193,7 @@ export const products: Product[] = [
   {
     id: "1",
     slug: "mystery-box-5",
-    name: "Mystery Box — 5 Prints",
+    name: "Mystery Box — 5 Fidgets",
     size: "Starter",
     kind: "mystery",
     fidgetCount: 5,
@@ -209,7 +209,7 @@ export const products: Product[] = [
   {
     id: "2",
     slug: "mystery-box-10",
-    name: "Mystery Box — 10 Prints",
+    name: "Mystery Box — 10 Fidgets",
     size: "Popular",
     kind: "mystery",
     fidgetCount: 10,
@@ -226,7 +226,7 @@ export const products: Product[] = [
   {
     id: "3",
     slug: "mystery-box-15",
-    name: "Mystery Box — 15 Prints",
+    name: "Mystery Box — 15 Fidgets",
     size: "Premium",
     kind: "mystery",
     fidgetCount: 15,
@@ -243,7 +243,7 @@ export const products: Product[] = [
   {
     id: "4",
     slug: "mystery-box-25",
-    name: "Mystery Box — 25 Prints",
+    name: "Mystery Box — 25 Fidgets",
     size: "Mega",
     kind: "mystery",
     fidgetCount: 25,
