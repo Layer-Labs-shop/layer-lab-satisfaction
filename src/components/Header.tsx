@@ -15,26 +15,9 @@ const navLinks = [
 
 export function Header() {
   const { count } = useCart();
-  const { user } = useAuth();
+  const { user, profile } = useAuth();
   const [open, setOpen] = useState(false);
-  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!user) {
-      setAvatarUrl(null);
-      return;
-    }
-    // Prefer Firebase user.photoURL immediately, then refine from Firestore profile
-    setAvatarUrl(user.photoURL ?? null);
-    import("firebase/firestore").then(async ({ doc, getDoc }) => {
-      const { db } = await import("@/lib/firebase");
-      const snap = await getDoc(doc(db, "profiles", user.uid));
-      if (snap.exists()) {
-        const data = snap.data() as { photoURL?: string | null };
-        if (data.photoURL) setAvatarUrl(data.photoURL);
-      }
-    }).catch(() => {});
-  }, [user]);
+  const avatarUrl = profile?.photoURL ?? user?.photoURL ?? null;
 
   return (
     <header className="sticky top-0 z-50 glass">
