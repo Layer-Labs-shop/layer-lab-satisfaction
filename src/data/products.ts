@@ -198,11 +198,11 @@ export const products: Product[] = [
     kind: "mystery",
     fidgetCount: 5,
     freeFidgets: 0,
-    bonusChance: 1,
+    bonusChance: 5,
     price: 7.99,
     image: mysteryBox,
     description:
-      "Dip your toes in. Five randomly selected precision prints — fidgets, desk pieces and surprise items hand-picked from our full collection. 1% chance of an extra free print tucked inside.",
+      "Dip your toes in. Five randomly selected precision prints — fidgets, desk pieces and surprise items hand-picked from our full collection. 5% chance of a rare fidget tucked inside.",
     materials: ["PLA+", "PETG"],
     satisfaction: { smoothness: 9, sound: 9, tactile: 9 },
   },
