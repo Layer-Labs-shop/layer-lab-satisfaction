@@ -59,10 +59,10 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
         {product.kind === "mystery" ? (
           <ul className="space-y-0.5 text-xs text-muted-foreground">
-            <li>• {product.fidgetCount} random prints</li>
+            <li>• {product.fidgetCount} random fidgets</li>
             {product.freeFidgets > 0 && (
               <li className="text-foreground">
-                • {product.freeFidgets} free print{product.freeFidgets > 1 ? "s" : ""} included
+                • {product.freeFidgets} free fidget{product.freeFidgets > 1 ? "s" : ""} included
               </li>
             )}
             <li>• {product.bonusChance}% chance of a rare fidget</li>

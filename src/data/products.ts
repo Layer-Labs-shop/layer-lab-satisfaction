@@ -202,7 +202,7 @@ export const products: Product[] = [
     price: 15.99,
     image: mysteryBox,
     description:
-      "Dip your toes in. Five randomly selected precision prints — fidgets, desk pieces and surprise items hand-picked from our full collection. 5% chance of a rare fidget tucked inside.",
+      "Dip your toes in. Five randomly selected fidgets — desk pieces and surprise items hand-picked from our full collection. 5% chance of a rare fidget tucked inside.",
     materials: ["PLA+", "PETG"],
     satisfaction: { smoothness: 9, sound: 9, tactile: 9 },
   },
@@ -218,7 +218,7 @@ export const products: Product[] = [
     price: 29.99,
     image: mysteryBox,
     description:
-      "Ten surprise prints, double the variety. 10% chance of a rare fidget. The sweet spot for collectors building out their desk.",
+      "Ten surprise fidgets, double the variety. 10% chance of a rare fidget. The sweet spot for collectors building out their desk.",
     materials: ["PLA+", "PETG"],
     satisfaction: { smoothness: 9, sound: 9, tactile: 10 },
     badge: "Bestseller",
@@ -235,7 +235,7 @@ export const products: Product[] = [
     price: 43.99,
     image: mysteryBox,
     description:
-      "Fifteen prints plus 1 guaranteed freebie on the house. 20% chance of a rare fidget on top. Serious value for serious collectors.",
+      "Fifteen fidgets plus 1 guaranteed freebie on the house. 20% chance of a rare fidget on top. Serious value for serious collectors.",
     materials: ["PLA+", "PETG"],
     satisfaction: { smoothness: 10, sound: 9, tactile: 10 },
     badge: "Best Value",
@@ -252,7 +252,7 @@ export const products: Product[] = [
     price: 55.99,
     image: mysteryBox,
     description:
-      "The ultimate haul: 25 hand-picked prints, 2 guaranteed freebies, and a 30% chance of a rare fidget. Stock the whole office.",
+      "The ultimate haul: 25 hand-picked fidgets, 2 guaranteed freebies, and a 30% chance of a rare fidget. Stock the whole office.",
     materials: ["PLA+", "PETG"],
     satisfaction: { smoothness: 10, sound: 10, tactile: 10 },
     badge: "Mega Drop",
