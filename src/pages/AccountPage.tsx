@@ -27,7 +27,7 @@ interface Order {
 }
 
 export default function AccountPage() {
-  const { user, loading, signOut } = useAuth();
+  const { user, profile, loading, signOut, updateProfile } = useAuth();
   const navigate = useNavigate();
   const [orders, setOrders] = useState<Order[]>([]);
   const [loadingOrders, setLoadingOrders] = useState(true);
@@ -39,10 +39,10 @@ export default function AccountPage() {
 
   const [username, setUsername] = useState("");
   const [aboutMe, setAboutMe] = useState("");
-  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
   const [savingProfile, setSavingProfile] = useState(false);
   const [uploadingAvatar, setUploadingAvatar] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const avatarUrl = profile?.photoURL ?? user?.photoURL ?? null;
 
   useEffect(() => {
     if (!loading && !user) navigate("/auth", { replace: true });
@@ -51,41 +51,28 @@ export default function AccountPage() {
   useEffect(() => {
     if (!user) return;
     setNewEmail(user.email ?? "");
+  }, [user]);
 
-    // Orders still come from Supabase for now.
+  // Seed local form fields from profile (no refetch on every keystroke)
+  useEffect(() => {
+    if (!profile) return;
+    setUsername(profile.username ?? "");
+    setAboutMe(profile.about ?? "");
+  }, [profile?.uid]);
+
+  useEffect(() => {
+    if (!user) return;
     (async () => {
       const { data, error } = await supabase
         .from("orders")
         .select("id, created_at, total, status, items")
         .order("created_at", { ascending: false });
       if (error) {
-        // Don't block UI just because Supabase orders are unavailable.
         console.warn("Orders fetch failed:", error.message);
       } else {
         setOrders((data ?? []) as unknown as Order[]);
       }
       setLoadingOrders(false);
-    })();
-
-    // Profile from Firestore.
-    (async () => {
-      try {
-        const snap = await getDoc(doc(db, "profiles", user.uid));
-        if (snap.exists()) {
-          const data = snap.data() as {
-            username?: string | null;
-            about?: string | null;
-            photoURL?: string | null;
-          };
-          setUsername(data.username ?? "");
-          setAboutMe(data.about ?? "");
-          setAvatarUrl(data.photoURL ?? user.photoURL ?? null);
-        } else {
-          setAvatarUrl(user.photoURL ?? null);
-        }
-      } catch (err) {
-        console.error("Profile load failed:", err);
-      }
     })();
   }, [user]);
 
@@ -97,11 +84,7 @@ export default function AccountPage() {
     setSavingEmail(true);
     try {
       await updateEmail(auth.currentUser, newEmail);
-      await setDoc(
-        doc(db, "profiles", auth.currentUser.uid),
-        { email: newEmail },
-        { merge: true },
-      );
+      await updateProfile({ email: newEmail });
       toast.success("Email updated");
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Failed to update email");
@@ -134,16 +117,10 @@ export default function AccountPage() {
     if (!user) return;
     setSavingProfile(true);
     try {
-      await setDoc(
-        doc(db, "profiles", user.uid),
-        {
-          uid: user.uid,
-          email: user.email ?? null,
-          username: username.trim() || null,
-          about: aboutMe.trim() || null,
-        },
-        { merge: true },
-      );
+      await updateProfile({
+        username: username.trim() || null,
+        about: aboutMe.trim() || null,
+      });
       toast.success("Profile updated");
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Failed to save profile");
@@ -165,12 +142,7 @@ export default function AccountPage() {
       const r = storageRef(storage, path);
       await uploadBytes(r, file, { contentType: file.type });
       const url = await getDownloadURL(r);
-      await setDoc(
-        doc(db, "profiles", user.uid),
-        { photoURL: url },
-        { merge: true },
-      );
-      setAvatarUrl(url);
+      await updateProfile({ photoURL: url });
       toast.success("Photo updated");
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Upload failed");
