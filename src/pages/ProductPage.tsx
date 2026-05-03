@@ -112,7 +112,7 @@ export default function ProductPage() {
           {!isPrint && (
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               <Stat icon={Package} label="Prints" value={`${product.fidgetCount}`} />
-              <Stat icon={Gift} label="Free prints" value={product.freeFidgets > 0 ? `+${product.freeFidgets}` : "—"} />
+              <Stat icon={Gift} label="Free fidgets" value={product.freeFidgets > 0 ? `+${product.freeFidgets}` : "—"} />
               <Stat icon={Sparkles} label="Rare fidget chance" value={`${product.bonusChance}%`} />
             </div>
           )}
