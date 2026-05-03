@@ -248,11 +248,11 @@ export const products: Product[] = [
     kind: "mystery",
     fidgetCount: 25,
     freeFidgets: 2,
-    bonusChance: 10,
+    bonusChance: 30,
     price: 49.99,
     image: mysteryBox,
     description:
-      "The ultimate haul: 25 hand-picked prints, 2 guaranteed freebies, and a 10% chance of an extra bonus print. Stock the whole office.",
+      "The ultimate haul: 25 hand-picked prints, 2 guaranteed freebies, and a 30% chance of a rare fidget. Stock the whole office.",
     materials: ["PLA+", "PETG"],
     satisfaction: { smoothness: 10, sound: 10, tactile: 10 },
     badge: "Mega Drop",
