@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { ShoppingBag, Menu, X, User } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useCart } from "@/store/cart";
 import { useAuth } from "@/hooks/useAuth";
 
