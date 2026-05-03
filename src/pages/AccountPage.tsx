@@ -5,9 +5,8 @@ import { toast } from "sonner";
 import { Seo } from "@/components/Seo";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
-import { auth, db, storage } from "@/lib/firebase";
+import { auth, storage } from "@/lib/firebase";
 import { updateEmail, updatePassword } from "firebase/auth";
-import { doc, getDoc, setDoc } from "firebase/firestore";
 import { ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
 
 interface OrderItem {
