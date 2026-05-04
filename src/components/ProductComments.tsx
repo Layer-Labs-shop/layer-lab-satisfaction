@@ -11,7 +11,6 @@ import {
   query,
   serverTimestamp,
   updateDoc,
-  where,
   Timestamp,
 } from "firebase/firestore";
 import { z } from "zod";
