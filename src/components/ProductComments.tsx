@@ -140,7 +140,7 @@ export function ProductComments({ productId }: { productId: string }) {
     }
     setSubmitting(true);
     try {
-      await addDoc(collection(db, "comments"), {
+      await addDoc(collection(db, "products", productId, "comments"), {
         productId,
         userId: user.uid,
         username: profile?.username || user.displayName || user.email?.split("@")[0] || "Anonymous",
@@ -153,8 +153,8 @@ export function ProductComments({ productId }: { productId: string }) {
       setRating(5);
       toast.success("Comment posted");
     } catch (err) {
-      console.error(err);
-      toast.error("Could not post comment");
+      console.error("Failed to post comment:", err);
+      toast.error("Could not post comment. Check that you're signed in.");
     } finally {
       setSubmitting(false);
     }
