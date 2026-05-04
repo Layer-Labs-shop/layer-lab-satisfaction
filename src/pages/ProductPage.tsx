@@ -187,22 +187,7 @@ export default function ProductPage() {
         </div>
       </div>
 
-      <section className="mt-20">
-        <h2 className="font-display text-2xl font-bold md:text-3xl">What people say</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {reviews.map((r) => (
-            <div key={r.name} className="rounded-2xl border border-border bg-card p-6">
-              <div className="flex gap-0.5 text-gradient">
-                {Array.from({ length: r.rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <p className="mt-3 text-sm text-muted-foreground">"{r.text}"</p>
-              <div className="mt-4 text-xs font-semibold">{r.name}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ProductComments productId={product.id} />
     </div>
   );
 }
