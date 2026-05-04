@@ -178,7 +178,7 @@ export function ProductComments({ productId }: { productId: string }) {
       return;
     }
     try {
-      await updateDoc(doc(db, "comments", id), {
+      await updateDoc(doc(db, "products", productId, "comments", id), {
         rating: parsed.data.rating,
         text: parsed.data.text,
         updatedAt: serverTimestamp(),
