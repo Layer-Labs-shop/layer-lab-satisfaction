@@ -35,11 +35,6 @@ export interface Product {
   materials: Material[];
   colors?: ProductColor[];
   customizable?: boolean;
-  satisfaction: {
-    smoothness: number;
-    sound: number;
-    tactile: number;
-  };
   badge?: string;
 }
 
