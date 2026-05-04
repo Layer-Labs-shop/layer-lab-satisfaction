@@ -98,9 +98,6 @@ export default function ProductPage() {
           <h1 className="mt-2 font-display text-4xl font-bold md:text-5xl">{product.name}</h1>
           <div className="mt-4 flex items-center gap-3">
             <div className="font-display text-3xl font-bold">€{product.price.toFixed(2)}</div>
-            <div className="flex items-center gap-1 text-sm text-muted-foreground">
-              <Star className="h-4 w-4 fill-current text-gradient" /> 4.9 (128 reviews)
-            </div>
           </div>
           <p className="mt-6 text-muted-foreground">{product.description}</p>
 
