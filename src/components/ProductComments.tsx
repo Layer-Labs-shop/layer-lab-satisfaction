@@ -104,8 +104,7 @@ export function ProductComments({ productId }: { productId: string }) {
 
   useEffect(() => {
     const q = query(
-      collection(db, "comments"),
-      where("productId", "==", productId),
+      collection(db, "products", productId, "comments"),
       orderBy("createdAt", "desc"),
     );
     const unsub = onSnapshot(
@@ -118,6 +117,7 @@ export function ProductComments({ productId }: { productId: string }) {
       },
       (err) => {
         console.error("Failed to load comments:", err);
+        toast.error("Could not load comments");
         setLoading(false);
       },
     );
