@@ -37,7 +37,7 @@ const commentSchema = z.object({
     .string()
     .trim()
     .min(2, "Comment is too short")
-    .max(800, "Comment must be under 800 characters"),
+    .max(250, "Comment must be under 250 characters"),
 });
 
 function formatDate(ts: Timestamp | null) {
@@ -229,14 +229,14 @@ export function ProductComments({ productId }: { productId: string }) {
             </div>
             <textarea
               value={text}
-              onChange={(e) => setText(e.target.value.slice(0, 800))}
+              onChange={(e) => setText(e.target.value.slice(0, 250))}
               placeholder="Share your thoughts about this product…"
               rows={3}
-              maxLength={800}
+              maxLength={250}
               className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-smooth focus:border-primary focus:outline-none"
             />
             <div className="flex items-center justify-between">
-              <span className="text-[11px] text-muted-foreground">{text.length}/800</span>
+              <span className="text-[11px] text-muted-foreground">{text.length}/250</span>
               <button
                 type="submit"
                 disabled={submitting || text.trim().length < 2}
@@ -304,9 +304,9 @@ export function ProductComments({ productId }: { productId: string }) {
                       <div className="mt-3 space-y-2">
                         <textarea
                           value={editText}
-                          onChange={(e) => setEditText(e.target.value.slice(0, 800))}
+                          onChange={(e) => setEditText(e.target.value.slice(0, 250))}
                           rows={3}
-                          maxLength={800}
+                          maxLength={250}
                           className="w-full rounded-xl border border-border bg-background px-3 py-2 text-sm transition-smooth focus:border-primary focus:outline-none"
                         />
                         <div className="flex justify-end gap-2">
