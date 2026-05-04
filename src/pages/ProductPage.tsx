@@ -1,15 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
-import { Check, ShoppingBag, Star, Gift, Sparkles, Package } from "lucide-react";
+import { Check, ShoppingBag, Gift, Sparkles, Package } from "lucide-react";
 import { products } from "@/data/products";
 import { useCart } from "@/store/cart";
 import { Seo } from "@/components/Seo";
-
-const reviews = [
-  { name: "Marcus T.", rating: 5, text: "Got the 10-pack and every single print was crisp. Two of my favourites came in this box." },
-  { name: "Aisha R.", rating: 5, text: "The mystery factor is half the fun. Build quality across all of them is unreal." },
-  { name: "Devon K.", rating: 4, text: "Bought the 25 box for the office. Everyone fought over the spinners and desk pieces. Worth it." },
-];
+import { ProductComments } from "@/components/ProductComments";
 
 export default function ProductPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -103,9 +98,6 @@ export default function ProductPage() {
           <h1 className="mt-2 font-display text-4xl font-bold md:text-5xl">{product.name}</h1>
           <div className="mt-4 flex items-center gap-3">
             <div className="font-display text-3xl font-bold">€{product.price.toFixed(2)}</div>
-            <div className="flex items-center gap-1 text-sm text-muted-foreground">
-              <Star className="h-4 w-4 fill-current text-gradient" /> 4.9 (128 reviews)
-            </div>
           </div>
           <p className="mt-6 text-muted-foreground">{product.description}</p>
 
@@ -195,22 +187,7 @@ export default function ProductPage() {
         </div>
       </div>
 
-      <section className="mt-20">
-        <h2 className="font-display text-2xl font-bold md:text-3xl">What people say</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {reviews.map((r) => (
-            <div key={r.name} className="rounded-2xl border border-border bg-card p-6">
-              <div className="flex gap-0.5 text-gradient">
-                {Array.from({ length: r.rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <p className="mt-3 text-sm text-muted-foreground">"{r.text}"</p>
-              <div className="mt-4 text-xs font-semibold">{r.name}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ProductComments productId={product.id} />
     </div>
   );
 }
