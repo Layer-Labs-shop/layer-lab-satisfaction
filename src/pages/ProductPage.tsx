@@ -1,15 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
-import { Check, ShoppingBag, Star, Gift, Sparkles, Package } from "lucide-react";
+import { Check, ShoppingBag, Gift, Sparkles, Package } from "lucide-react";
 import { products } from "@/data/products";
 import { useCart } from "@/store/cart";
 import { Seo } from "@/components/Seo";
-
-const reviews = [
-  { name: "Marcus T.", rating: 5, text: "Got the 10-pack and every single print was crisp. Two of my favourites came in this box." },
-  { name: "Aisha R.", rating: 5, text: "The mystery factor is half the fun. Build quality across all of them is unreal." },
-  { name: "Devon K.", rating: 4, text: "Bought the 25 box for the office. Everyone fought over the spinners and desk pieces. Worth it." },
-];
+import { ProductComments } from "@/components/ProductComments";
 
 export default function ProductPage() {
   const { slug } = useParams<{ slug: string }>();
