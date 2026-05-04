@@ -17,7 +17,7 @@ import {
 import { z } from "zod";
 import { db } from "@/lib/firebase";
 import { useAuth } from "@/hooks/useAuth";
-import { toast } from "@/components/ui/sonner";
+import { toast } from "sonner";
 
 interface Comment {
   id: string;
