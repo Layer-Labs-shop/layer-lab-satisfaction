@@ -194,7 +194,7 @@ export function ProductComments({ productId }: { productId: string }) {
   const handleDelete = async (id: string) => {
     if (!confirm("Delete this comment?")) return;
     try {
-      await deleteDoc(doc(db, "comments", id));
+      await deleteDoc(doc(db, "products", productId, "comments", id));
       toast.success("Comment deleted");
     } catch (err) {
       console.error(err);
