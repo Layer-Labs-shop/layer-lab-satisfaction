@@ -35,11 +35,6 @@ export interface Product {
   materials: Material[];
   colors?: ProductColor[];
   customizable?: boolean;
-  satisfaction: {
-    smoothness: number;
-    sound: number;
-    tactile: number;
-  };
   badge?: string;
 }
 
@@ -82,7 +77,6 @@ export const products: Product[] = [
       standardColors.gray,
       standardColors.white,
     ],
-    satisfaction: { smoothness: 9, sound: 8, tactile: 9 },
     badge: "New",
   },
   {
@@ -108,7 +102,6 @@ export const products: Product[] = [
       standardColors.red,
       standardColors.green,
     ],
-    satisfaction: { smoothness: 9, sound: 7, tactile: 9 },
     badge: "New",
   },
   {
@@ -128,7 +121,6 @@ export const products: Product[] = [
       "Blacked out suspension cover for the Segway G3. Comes with double-sided tape and just clips right on — instantly cleans up the look of your rear suspension.",
     materials: ["PLA+", "PETG"],
     colors: [standardColors.black],
-    satisfaction: { smoothness: 9, sound: 7, tactile: 9 },
     badge: "New",
   },
   {
@@ -160,7 +152,6 @@ export const products: Product[] = [
       standardColors.purple,
       standardColors.brightRed,
     ],
-    satisfaction: { smoothness: 8, sound: 6, tactile: 9 },
     badge: "New",
   },
   {
@@ -187,7 +178,6 @@ export const products: Product[] = [
       standardColors.gray,
     ],
     customizable: true,
-    satisfaction: { smoothness: 9, sound: 7, tactile: 9 },
     badge: "Custom",
   },
   {
@@ -204,7 +194,6 @@ export const products: Product[] = [
     description:
       "Dip your toes in. Five randomly selected fidgets — desk pieces and surprise items hand-picked from our full collection. 5% chance of a rare fidget tucked inside.",
     materials: ["PLA+", "PETG"],
-    satisfaction: { smoothness: 9, sound: 9, tactile: 9 },
   },
   {
     id: "2",
@@ -220,7 +209,6 @@ export const products: Product[] = [
     description:
       "Ten surprise fidgets, double the variety. 10% chance of a rare fidget. The sweet spot for collectors building out their desk.",
     materials: ["PLA+", "PETG"],
-    satisfaction: { smoothness: 9, sound: 9, tactile: 10 },
     badge: "Bestseller",
   },
   {
@@ -237,7 +225,6 @@ export const products: Product[] = [
     description:
       "Fifteen fidgets plus 1 guaranteed freebie on the house. 20% chance of a rare fidget on top. Serious value for serious collectors.",
     materials: ["PLA+", "PETG"],
-    satisfaction: { smoothness: 10, sound: 9, tactile: 10 },
     badge: "Best Value",
   },
   {
@@ -254,7 +241,6 @@ export const products: Product[] = [
     description:
       "The ultimate haul: 25 hand-picked fidgets, 2 guaranteed freebies, and a 30% chance of a rare fidget. Stock the whole office.",
     materials: ["PLA+", "PETG"],
-    satisfaction: { smoothness: 10, sound: 10, tactile: 10 },
     badge: "Mega Drop",
   },
 ];
